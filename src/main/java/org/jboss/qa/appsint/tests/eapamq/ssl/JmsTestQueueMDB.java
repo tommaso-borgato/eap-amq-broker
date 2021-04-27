@@ -20,18 +20,16 @@ import javax.jms.TextMessage;
  * Test message driven bean to consume a Text messages with "consumer = 'MDB'" selector from testQueue.
  */
 @MessageDriven(name = "testQueueMDB", activationConfig = {
+		/*
 		@ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "java:/jms/amq/queue/inQueue"),
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
 		@ActivationConfigProperty(propertyName = "connectionFactoryLookup", propertyValue = "java:jboss/RemoteJmsXA")
-		/*
+		*/
 		@ActivationConfigProperty(propertyName = "destination", propertyValue = "inQueue"),
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-		@ActivationConfigProperty(propertyName = "user", propertyValue = "admin"),
-		@ActivationConfigProperty(propertyName = "password", propertyValue = "admin"),
 		@ActivationConfigProperty(propertyName = "connectionFactoryLookup", propertyValue = "java:jboss/RemoteJmsXA"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge")
-		*/
 })
 public class JmsTestQueueMDB implements MessageListener {
 
